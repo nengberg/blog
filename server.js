@@ -14,6 +14,6 @@ app.use("/font", express.static(__dirname + '/app/font'));
 var routes = require('./app/routes/routes.js');
 routes(app);
 
-app.listen(3000, function() {
-	console.log('Server running on port 3000')
+app.listen(process.env.PORT || 3000, function() {
+	console.log('Server running')
 });
