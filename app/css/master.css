@@ -72,16 +72,16 @@ p {
 @media screen and (min-width: 320px) and (max-width: 600px) {
 	h1 {
 		margin-bottom: 5px;
-		font-size: 40px;
+		font-size: 50px;
 		letter-spacing: 3px;
 	}
 
 	.teaser i {
-		font-size: 15px;
+		font-size: 20px;
 	}
 
 	.teaser {
-		width:400px;
-	    margin-left: -200px;
+		width:420px;
+	    margin-left: -210px;
 	}
 }
