@@ -1,6 +1,6 @@
 @font-face {
     font-family: OpenSans;
-    src: url("../font/OpenSans.ttf");
+    src: url("/font/OpenSans.ttf");
 }
 
 body {
@@ -25,7 +25,7 @@ p {
 
 .image {
 	position:absolute; width:100%; height:100%;
-    background-image: url(../../img/bg.jpg);
+    background-image: url(/img/background.jpg);
     background-size: cover;
 }
 
@@ -36,8 +36,8 @@ p {
 	text-align: center;
 	width:800px;
     height:300px;
-    margin-left: -400px; /*half width*/
-    margin-top: -150px; /*half height*/
+    margin-left: -400px;
+    margin-top: -150px;
 }
 
 .image .teaser i {
