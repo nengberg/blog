@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+	<link href="/styles/master.css" rel="stylesheet">
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("button").click(function() {
+			$('html,body').animate({
+				scrollTop: $("main").offset().top
+			},
+				800);
+			});
+		});
+	</script>
+	<meta charset="utf-8" />
+    <title>Niklas Engberg</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="descrition" content="pragmatic coder with passion for design patterns and test driven development" >
+</head>
+<body class="start" >
+	<header>
+		<div class="teaser">
+			<div class="wrench"></div>
+			<h1>Niklas Engberg</h1>
+			<p>code, life, food etc.</p>
+		</div>
+		<button class="arrow bounce">
+		</div>
+	</header>
+	 <main role="main">
+	 	{{{ body }}}
+	 </main>
+</body>
+</html>

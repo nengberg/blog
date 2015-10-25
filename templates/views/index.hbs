@@ -1,0 +1,9 @@
+{{!< default}}
+{{# each data.posts.results}}
+	<div class="post">
+		<h2>{{{ title }}}</h2>
+		<span>{{{ publishedDate }}}</span>
+		<hr>
+		{{{ content.extended.html }}}
+	</div>
+{{/each}}
