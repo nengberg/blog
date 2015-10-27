@@ -1,8 +1,8 @@
 {{!< default}}
 {{# each data.posts.results}}
 	<div class="post">
-		<h2>{{{ title }}}</h2>
-		<span>{{{ publishedDate }}}</span>
+		<h2>{{ title }}</h2>
+		<time datetime="{{{date publishedDate format='YYYY-MM-DD'}}}">{{{date publishedDate format='YYYY-MM-DD'}}}</time>
 		<hr>
 		{{{ content.extended.html }}}
 	</div>
