@@ -7,7 +7,6 @@ exports = module.exports = function(req, res) {
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-	locals.section = 'home';
 	locals.data = {
 		posts: []
 	};
@@ -16,8 +15,7 @@ exports = module.exports = function(req, res) {
 		
 		var q = keystone.list('Post').paginate({
 				page: req.query.page || 1,
-				perPage: 10,
-				maxPages: 10
+				perPage: 5
 			})
 			.where('state', 'published')
 			.sort('-publishedDate')

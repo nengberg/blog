@@ -1,9 +1,18 @@
 {{!< default}}
 {{# each data.posts.results}}
 	<div class="post">
-		<h2>{{ title }}</h2>
+		<a href="{{{ slug }}}#main" class="heading"><h2>{{ title }}</h2></a>
 		<time datetime="{{{date publishedDate format='YYYY-MM-DD'}}}">{{{date publishedDate format='YYYY-MM-DD'}}}</time>
 		<hr>
 		{{{ content.extended.html }}}
 	</div>
 {{/each}}
+
+{{# if data.posts.previous}}
+<a href='?page={{{ data.posts.previous }}}'>
+{{/if}}
+
+<div class="paging">
+	<button class="arrow bounce">
+</div>
+

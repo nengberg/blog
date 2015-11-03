@@ -1,0 +1,10 @@
+{{!< default}}
+<div class="post">
+	<h2>{{ data.post.title }}</h2>
+	<time datetime="{{{date data.post.publishedDate format='YYYY-MM-DD'}}}">{{{date data.post.publishedDate format='YYYY-MM-DD'}}}</time>
+	<hr>
+	{{{ data.post.content.extended.html }}}
+</div>
+<div class="footer">
+	<a href="/#main">< Back to start page</a>
+</div>

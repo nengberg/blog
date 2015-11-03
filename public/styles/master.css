@@ -15,7 +15,7 @@ body {
 	background: #FAFAFA;
 }
 
-h1, h2 {
+h1, h2, h3 {
 	letter-spacing: 1px;
 }
 
@@ -32,6 +32,13 @@ h2 {
 	font-weight: 200;
 	margin-bottom: 15px;
 	margin-top: 40px;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  font-family: 'Lora', 'Helvetica Neue',Arial,sans-serif;
 }
 
 .image {
@@ -94,17 +101,19 @@ time {
 }
 
 hr {
-    max-width: 50px;
-    border-color: #f05f40;
-    border-width: 3px;
-    border: 0;
-    border-top: 3px solid #f05f40;
+  max-width: 50px;
+  border-color: #f05f40;
+  border-width: 3px;
+  border: 0;
+  margin-bottom: 25px;
+  border-top: 3px solid #f05f40;
 }
 
 main {
     position:absolute; 
     width:100%; 
-    top:100%; 
+    top:100%;
+    max-height: 100%;
     color: #000;
     text-align: center;
     font-family: 'Open Sans','Helvetica Neue',Arial,sans-serif;
@@ -121,7 +130,33 @@ main {
 	letter-spacing: 0.02em;
 	font-family: 'Lora', 'Helvetica Neue',Arial,sans-serif;
 	line-height: 1.6;
-  margin-top: 25px;
+  margin-top: 5px;
+}
+
+code {
+  font-size: 14px;
+  display: inline-block;
+  letter-spacing: 0;
+  word-break: break-word !important;
+  width: 100%
+}
+
+.post p a:hover{
+    text-decoration: underline;
+}
+
+.post p a {
+  color: #f05f40;
+  text-decoration: none;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer {
+  margin-bottom: 25px
 }
 
 @-moz-keyframes bounce {
@@ -197,12 +232,25 @@ button:focus {
 	outline:0;
 }
 
+.paging {
+  margin: 0 auto;
+  max-width: 200px;
+}
+
+.paging .arrow {
+  background-color: #f05f40;
+}
+
 @media screen and (min-width: 320px) and (max-width: 600px) {
 	h1 {
 		margin-bottom: 5px;
 		font-size: 36px;
 		letter-spacing: 2px;
 	}
+
+  h3 {
+    margin: 15px;
+  }
 
 	.teaser i {
 		font-size: 18px;
@@ -233,5 +281,9 @@ button:focus {
 
   main {
     top: 445px;
+  }
+
+  code {
+    font-size: 10px;
   }
 }
