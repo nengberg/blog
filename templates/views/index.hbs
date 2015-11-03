@@ -1,7 +1,7 @@
 {{!< default}}
 {{# each data.posts.results}}
 	<div class="post">
-		<a href="{{{ slug }}}#main" class="heading"><h2>{{ title }}</h2></a>
+		<a href="{{{ slug }}}#main"><h2>{{ title }}</h2></a>
 		<time datetime="{{{date publishedDate format='YYYY-MM-DD'}}}">{{{date publishedDate format='YYYY-MM-DD'}}}</time>
 		<hr>
 		{{{ content.extended.html }}}
@@ -12,7 +12,9 @@
 <a href='?page={{{ data.posts.previous }}}'>
 {{/if}}
 
+{{# if data.posts.next }}
 <div class="paging">
-	<button class="arrow bounce">
+	<button class="arrow" data-nextpage="{{{ data.posts.next }}}">
 </div>
+{{/if}}
 
