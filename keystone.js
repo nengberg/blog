@@ -2,13 +2,8 @@
 // customising the .env file in your project's root folder.
 require('dotenv').load();
 
-// Require keystone
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
-
-// Initialise Keystone with your project's configuration.
-// See http://keystonejs.com/guide/config for available options
-// and documentation.
 
 keystone.init({
 
@@ -35,8 +30,6 @@ keystone.init({
 
 });
 
-// Load your project's Models
-
 keystone.import('models');
 
 // Setup common locals for your templates. The following are required for the
@@ -50,17 +43,11 @@ keystone.set('locals', {
 	editable: keystone.content.editable
 });
 
-// Load your project's Routes
-
 keystone.set('routes', require('./routes'));
-
-// Configure the navigation bar in Keystone's Admin UI
-
 keystone.set('nav', {
 	'posts': ['posts', 'post-categories'],
 	'users': 'users'
 });
 
-// Start Keystone to connect to your database and initialise the web server
 
 keystone.start();

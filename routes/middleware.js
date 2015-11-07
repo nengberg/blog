@@ -1,13 +1,3 @@
-/**
- * This file contains the common middleware used by your routes.
- * 
- * Extend or replace these functions as your application requires.
- * 
- * This structure is not enforced, and just a starting point. If
- * you have more middleware you may want to group it as separate
- * modules in your project's /lib directory.
- */
-
 var _ = require('underscore');
 
 
@@ -19,19 +9,11 @@ var _ = require('underscore');
 	or replace it with your own templates / logic.
 */
 
-exports.initLocals = function(req, res, next) {
-	
+exports.initLocals = function(req, res, next) {	
 	var locals = res.locals;
-	
-	locals.navLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' }
-	];
-	
 	locals.user = req.user;
 	
-	next();
-	
+	next();	
 };
 
 

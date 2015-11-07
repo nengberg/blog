@@ -37,9 +37,10 @@ module.exports = function(grunt) {
 		'jshint'
 	]);
 
-	grunt.registerTask('dev', [
+	grunt.registerTask('default', [
 		'sass',
-		'watch'
+		'watch',
+		'jshint'
 	]);
 
 	// default option to connect server

@@ -27,4 +27,4 @@ exports = module.exports = function(req, res) {
 	// Render the view
 	view.render('post');
 
-}
+};
