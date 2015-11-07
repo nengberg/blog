@@ -14,49 +14,42 @@ $(document).ready(function() {
 		$.ajax({
 			type: "GET",
             url: "/posts/get?page=" + nextPage,
-        	success: function(data){
-        		data.posts.results.forEach(function(entry){
-					var div = $("<div></div>")
-					.addClass("post");
-					var a = $("<a></a>")
-					.attr("href", "/" + entry.slug + "#main")
-					.appendTo(div);
-					$("<h2></h2>").text(entry.title)
-					.appendTo(a);
-					$("<time></time>")
-					.attr("datetime", entry.publishedDate)
-					.text(entry.publishedDate)
-					.appendTo(div);
-					$("<hr>")
-					.appendTo(div);
-					div.append(entry.content.extended.html);
-			 
-			 		div.insertAfter('.post:last');
-			});
-
-        	if(!data.posts.next){
-	 			$('.paging').remove();
-	 		} else {
-	 			$('.paging button').data('nextpage',data.posts.next)
-	 		}
-        	
-			$("html,body").animate({scrollTop: $('.post:last').offset().top}, 1200);
-
-        	}
+			success: createPost
         });
+    });
 
-        function createPost(post) {
+    function createPost(data) {
+		data.posts.results.forEach(function(entry){
+			var date = moment(entry.publishedDate).format('YYYY-MM-DD');
 			var div = $("<div></div>")
 			.addClass("post");
 			var a = $("<a></a>")
-			.attr("href", "/" + post.slug + "#main")
-			.attr("id", "close-note");
-			$("<h2></h2>").text(post.title)
+			.attr("href", "/" + entry.slug + "#main")
 			.appendTo(div);
-			$("<time></time>").text(post.publishedDate)
+			$("<h2></h2>").text(entry.title)
+			.appendTo(a);
+			$("<time></time>")
+			.attr("datetime", date)
+			.text(date)
 			.appendTo(div);
 			$("<hr>")
 			.appendTo(div);
-        }
-	});
+			div.append(entry.content.extended.html);
+	 		
+	 		var codeBlock = div.find('code').each(function(){
+	 			var element = $(this);
+ 				element.addClass('language-csharp');
+	 		});
+			div.insertAfter('.post:last');
+		});
+
+		if(!data.posts.next){
+			$('.paging').remove();
+		} else {
+			$('.paging button').data('nextpage',data.posts.next);
+		}
+
+		Prism.highlightAll();
+		$("html,body").animate({scrollTop: $('.post:last').offset().top}, 1200);
+	}
 });
